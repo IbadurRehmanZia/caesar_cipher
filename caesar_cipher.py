@@ -19,8 +19,25 @@ def decoder(msg,shift):
         d_msg+=lowercase_alphabets[lowercase_alphabets.index(a)-shift]
     
     return d_msg
-msg=input("Type the messege:\n")
-shift=int(input("Enter shift number:\n"))
-# print("encoded messege: ",encoder(msg,shift))
-print("decoded messege: ",decoder(msg,shift))
 
+def main():
+    
+    tr=True
+    while tr==True:
+        method=input("Type 'decode' for decoding OR 'encode' for encoding : ")
+        msg=input("Type the messege:\n")
+        shift=int(input("Enter shift number:\n"))
+
+
+
+        if method=="encode":
+            
+            print("encoded messege: ",encoder(msg,shift))
+        else:
+            print("decoded messege: ",decoder(msg,shift))
+        cont=input("Do you want to continue ? (Y / N)").lower()
+        if cont=="n":
+            tr=False
+        
+
+main()
